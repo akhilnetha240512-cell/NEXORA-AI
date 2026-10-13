@@ -1,0 +1,420 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080817">
+  <meta name="description" content="NEXORA AI — Your personal AI assistant.">
+  <title>NEXORA AI — Personal Assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="app-shell">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#home" aria-label="NEXORA AI home">
+        <span class="brand-icon">N</span>
+        <span>NEXORA <b>AI</b></span>
+      </a>
+
+      <button class="new-chat-button" id="newChatButton">
+        <span>＋</span> New conversation
+      </button>
+
+      <p class="nav-label">WORKSPACE</p>
+
+      <nav class="navigation" aria-label="Main navigation">
+        <button class="nav-item active" data-page="home">
+          <span>⌂</span> Home
+        </button>
+        <button class="nav-item" data-page="chat">
+          <span>▤</span> AI Chat
+        </button>
+        <button class="nav-item" data-page="voice">
+          <span>◉</span> Voice Assistant
+        </button>
+        <button class="nav-item" data-page="actions">
+          <span>✧</span> App Actions
+        </button>
+        <button class="nav-item" data-page="history">
+          <span>◷</span> History
+        </button>
+        <button class="nav-item" data-page="settings">
+          <span>⚙</span> Settings
+        </button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="status-dot"></div>
+        <div>
+          <strong>NEXORA AI</strong>
+          <small>Personal assistant</small>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+      <header class="topbar">
+        <button class="icon-button menu-button" id="menuButton"
+          aria-label="Toggle menu">☰</button>
+
+        <div class="breadcrumb">
+          <span>NEXORA AI</span>
+          <span class="breadcrumb-divider">/</span>
+          <strong id="pageTitle">Home</strong>
+        </div>
+
+        <button class="profile-button" id="profileButton"
+          aria-label="Open settings">
+          <span class="profile-avatar">N</span>
+        </button>
+      </header>
+
+      <!-- HOME -->
+      <section class="page active" id="page-home">
+        <div class="home-content">
+
+          <div class="welcome-label">
+            <span class="live-dot"></span>
+            YOUR PERSONAL AI SPACE
+          </div>
+
+          <h1>Meet your world.<br>
+            <span class="gradient-text">Meet NEXORA.</span>
+          </h1>
+
+          <p class="welcome-description">
+            Your personal assistant for questions, voice commands,
+            learning and everyday tasks.
+          </p>
+
+          <div class="orb-container" id="orbContainer">
+            <div class="orb-halo"></div>
+            <div class="orb-ring orb-ring-one"></div>
+            <div class="orb-ring orb-ring-two"></div>
+            <div class="ai-orb">
+              <div class="orb-shine"></div>
+              <div class="orb-core"></div>
+            </div>
+            <div class="orb-particle particle-one"></div>
+            <div class="orb-particle particle-two"></div>
+            <div class="orb-particle particle-three"></div>
+          </div>
+
+          <div class="assistant-status">
+            <span class="status-dot"></span>
+            <span id="assistantStatus">Ready when you are</span>
+          </div>
+
+          <div class="quick-actions">
+            <button class="quick-action" data-page="chat">
+              <span class="action-icon purple">✧</span>
+              <span>
+                <strong>Ask anything</strong>
+                <small>Chat with your assistant</small>
+              </span>
+              <span class="action-arrow">↗</span>
+            </button>
+
+            <button class="quick-action" data-page="voice">
+              <span class="action-icon blue">♫</span>
+              <span>
+                <strong>Voice mode</strong>
+                <small>Speak a command</small>
+              </span>
+              <span class="action-arrow">↗</span>
+            </button>
+
+            <button class="quick-action" data-page="actions">
+              <span class="action-icon pink">⌘</span>
+              <span>
+                <strong>App actions</strong>
+                <small>Open supported apps</small>
+              </span>
+              <span class="action-arrow">↗</span>
+            </button>
+
+            <button class="quick-action" data-page="history">
+              <span class="action-icon cyan">◷</span>
+              <span>
+                <strong>Recent activity</strong>
+                <small>Review your conversations</small>
+              </span>
+              <span class="action-arrow">↗</span>
+            </button>
+          </div>
+
+          <div class="home-chat-box">
+            <span class="input-sparkle">✧</span>
+            <input id="homeInput" type="text"
+              placeholder="Ask NEXORA anything..."
+              autocomplete="off">
+            <button class="send-button" id="homeSendButton"
+              aria-label="Send message">↑</button>
+          </div>
+
+          <p class="privacy-note">
+            Your assistant is being set up. AI answers require a secure
+            AI connection.
+          </p>
+
+        </div>
+      </section>
+
+      <!-- CHAT -->
+      <section class="page" id="page-chat">
+        <div class="section-heading">
+          <span class="eyebrow">YOUR CONVERSATION</span>
+          <h1>AI <span class="gradient-text">Chat</span></h1>
+          <p>Ask questions, explore ideas and get help with your tasks.</p>
+        </div>
+
+        <div class="chat-panel">
+          <div class="chat-messages" id="chatMessages" aria-live="polite">
+            <div class="welcome-chat">
+              <div class="mini-orb">N</div>
+              <h2>What can I help you with?</h2>
+              <p>Send a message to begin your conversation.</p>
+            </div>
+          </div>
+
+          <div class="chat-input-area">
+            <div class="chat-input-wrap">
+              <textarea id="chatInput" rows="1"
+                placeholder="Message NEXORA AI..."
+                aria-label="Message NEXORA AI"></textarea>
+              <div class="chat-input-actions">
+                <button class="small-action-button" id="chatMicButton"
+                  title="Voice input" aria-label="Voice input">♫</button>
+                <button class="send-button" id="chatSendButton"
+                  aria-label="Send message">↑</button>
+              </div>
+            </div>
+            <p class="input-disclaimer">
+              AI responses are unavailable until an AI service is securely connected.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- VOICE -->
+      <section class="page" id="page-voice">
+        <div class="section-heading">
+          <span class="eyebrow">HANDS-FREE EXPERIENCE</span>
+          <h1>Voice <span class="gradient-text">Assistant</span></h1>
+          <p>Use your device's supported speech recognition and speech output.</p>
+        </div>
+
+        <div class="voice-card">
+          <div class="voice-orb" id="voiceOrb">
+            <div class="voice-orb-inner">N</div>
+          </div>
+
+          <h2 id="voiceTitle">Ready to listen</h2>
+          <p id="voiceDescription">
+            Tap the microphone and allow browser microphone access when asked.
+          </p>
+
+          <div class="voice-transcript" id="voiceTranscript">
+            Your recognized speech will appear here.
+          </div>
+
+          <button class="primary-button" id="voiceButton">
+            <span>♫</span> Start listening
+          </button>
+
+          <p class="muted-note">
+            Speech recognition depends on your browser and device.
+          </p>
+        </div>
+      </section>
+
+      <!-- APP ACTIONS -->
+      <section class="page" id="page-actions">
+        <div class="section-heading">
+          <span class="eyebrow">DEVICE SHORTCUTS</span>
+          <h1>App <span class="gradient-text">Actions</span></h1>
+          <p>Choose an app to try opening it on your Android device.</p>
+        </div>
+
+        <div class="notice-card">
+          <span class="notice-icon">ⓘ</span>
+          <p>
+            App launching depends on Android, your browser and whether the
+            app is installed. Some actions may open a web page instead.
+          </p>
+        </div>
+
+        <div class="app-grid">
+
+          <button class="app-card" data-app="instagram">
+            <span class="app-logo instagram-logo">◎</span>
+            <strong>Instagram</strong>
+            <small>Open Instagram</small>
+            <span class="app-open-label">Launch ↗</span>
+          </button>
+
+          <button class="app-card" data-app="youtube">
+            <span class="app-logo youtube-logo">▶</span>
+            <strong>YouTube</strong>
+            <small>Open YouTube</small>
+            <span class="app-open-label">Launch ↗</span>
+          </button>
+
+          <button class="app-card" data-app="snapchat">
+            <span class="app-logo snapchat-logo">👻</span>
+            <strong>Snapchat</strong>
+            <small>Open Snapchat</small>
+            <span class="app-open-label">Launch ↗</span>
+          </button>
+
+          <button class="app-card" data-app="chrome">
+            <span class="app-logo chrome-logo">◉</span>
+            <strong>Chrome</strong>
+            <small>Open Chrome</small>
+            <span class="app-open-label">Launch ↗</span>
+          </button>
+
+          <button class="app-card" data-app="google">
+            <span class="app-logo google-logo">G</span>
+            <strong>Google</strong>
+            <small>Search the web</small>
+            <span class="app-open-label">Launch ↗</span>
+          </button>
+
+        </div>
+
+        <div class="command-card">
+          <h2>Try a command</h2>
+          <p>Enter an app name to find a supported shortcut.</p>
+          <form id="commandForm" class="command-form">
+            <input id="commandInput" type="text"
+              placeholder="Example: Open Instagram"
+              autocomplete="off">
+            <button class="primary-button" type="submit">Run command</button>
+          </form>
+          <p id="commandResult" class="command-result" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <!-- HISTORY -->
+      <section class="page" id="page-history">
+        <div class="section-heading">
+          <span class="eyebrow">YOUR ACTIVITY</span>
+          <h1>Recent <span class="gradient-text">History</span></h1>
+          <p>Review activity saved by this website on this browser.</p>
+        </div>
+
+        <div class="history-panel">
+          <div class="history-toolbar">
+            <span id="historyCount">0 activities</span>
+            <button class="text-button" id="clearHistoryButton">
+              Clear history
+            </button>
+          </div>
+          <div id="historyList" class="history-list">
+            <div class="empty-state">
+              <span>◷</span>
+              <h3>No activity yet</h3>
+              <p>Your website activity will appear here.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SETTINGS -->
+      <section class="page" id="page-settings">
+        <div class="section-heading">
+          <span class="eyebrow">MAKE IT YOURS</span>
+          <h1>Assistant <span class="gradient-text">Settings</span></h1>
+          <p>Customize the website's local preferences.</p>
+        </div>
+
+        <div class="settings-panel">
+
+          <div class="settings-group-title">PERSONALIZATION</div>
+
+          <label class="setting-row" for="assistantName">
+            <span class="setting-icon">✧</span>
+            <span class="setting-copy">
+              <strong>Assistant name</strong>
+              <small>Choose how your assistant is named.</small>
+            </span>
+            <input id="assistantName" class="setting-input"
+              type="text" maxlength="30" value="NEXORA AI">
+          </label>
+
+          <label class="setting-row" for="languageSelect">
+            <span class="setting-icon">文</span>
+            <span class="setting-copy">
+              <strong>Language preference</strong>
+              <small>Select your preferred interface language.</small>
+            </span>
+            <select id="languageSelect" class="setting-input">
+              <option value="en">English</option>
+              <option value="te">తెలుగు</option>
+              <option value="hi">हिन्दी</option>
+            </select>
+          </label>
+
+          <label class="setting-row" for="soundToggle">
+            <span class="setting-icon">♫</span>
+            <span class="setting-copy">
+              <strong>Speech output</strong>
+              <small>Allow the website to speak supported messages.</small>
+            </span>
+            <input id="soundToggle" type="checkbox" checked>
+          </label>
+
+          <div class="settings-group-title">APPEARANCE</div>
+
+          <label class="setting-row" for="motionToggle">
+            <span class="setting-icon">✺</span>
+            <span class="setting-copy">
+              <strong>Orb animations</strong>
+              <small>Turn off animated visual effects if preferred.</small>
+            </span>
+            <input id="motionToggle" type="checkbox" checked>
+          </label>
+
+          <div class="settings-group-title">ABOUT</div>
+
+          <div class="setting-row">
+            <span class="setting-icon">ⓘ</span>
+            <span class="setting-copy">
+              <strong>NEXORA AI Website</strong>
+              <small>Version 1.0 · Front-end prototype</small>
+            </span>
+          </div>
+
+          <div class="settings-info">
+            Preferences and history are stored locally in this browser.
+            This website does not yet have a connected AI backend.
+            Never place secret API keys in public website files.
+          </div>
+
+          <button class="primary-button save-settings-button"
+            id="saveSettingsButton">Save preferences</button>
+          <p id="settingsMessage" class="settings-message" aria-live="polite"></p>
+
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>✧ NEXORA AI</span>
+        <span>Built for your everyday ideas.</span>
+      </footer>
+
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
