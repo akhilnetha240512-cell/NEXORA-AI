@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080914">
+  <meta name="description" content="NEXORA AI - Your personal AI assistant by Akhil Netha.">
+  <title>NEXORA AI | Personal AI Assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-icon">N</div>
+        <div>
+          <h2>NEXORA <span>AI</span></h2>
+          <small>PERSONAL AI ASSISTANT</small>
+        </div>
+      </div>
+
+      <button class="new-chat" id="newChatBtn">＋ New conversation</button>
+
+      <p class="nav-heading">WORKSPACE</p>
+      <nav class="navigation">
+        <button class="nav-item active" data-page="home">⌂ <span>Home</span></button>
+        <button class="nav-item" data-page="chat">▤ <span>AI Chat</span></button>
+        <button class="nav-item" data-page="voice">◉ <span>Voice Assistant</span></button>
+        <button class="nav-item" data-page="apps">▦ <span>App Actions</span></button>
+        <button class="nav-item" data-page="history">◷ <span>History</span></button>
+      </nav>
+
+      <p class="nav-heading">PREFERENCES</p>
+      <nav class="navigation">
+        <button class="nav-item" data-page="settings">⚙ <span>Settings</span></button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="profile">
+          <div class="avatar">A</div>
+          <div>
+            <strong>Akhil Netha</strong>
+            <small>Project Creator</small>
+          </div>
+        </div>
+        <small class="version">NEXORA AI • VERSION 1.0</small>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-button" id="menuBtn" aria-label="Toggle menu">☰</button>
+        <div class="page-label" id="pageLabel">Home</div>
+        <div class="status"><span class="status-dot"></span> Assistant ready</div>
+      </header>
+
+      <section class="page active" id="homePage">
+        <div class="welcome">
+          <span class="eyebrow">YOUR PERSONAL AI COMPANION</span>
+          <h1>Meet <span>NEXORA AI</span></h1>
+          <p>Your ideas, questions and tasks — one intelligent assistant.</p>
+        </div>
+
+        <div class="orb-area">
+          <div class="orb-glow"></div>
+          <div class="orb">
+            <div class="orb-core"></div>
+            <div class="orb-ring ring-one"></div>
+            <div class="orb-ring ring-two"></div>
+            <div class="orb-ring ring-three"></div>
+          </div>
+          <div class="orb-caption" id="orbCaption">READY TO ASSIST</div>
+        </div>
+
+        <div class="home-prompt">
+          <h2>What can I help you with?</h2>
+          <p>Ask anything. Let's explore something new.</p>
+          <div class="quick-actions">
+            <button class="quick-action" data-prompt="Explain artificial intelligence in simple words.">✦ Learn something</button>
+            <button class="quick-action" data-prompt="Help me with my studies.">▤ Study help</button>
+            <button class="quick-action" data-prompt="Give me some creative project ideas.">✧ Ideas</button>
+            <button class="quick-action" data-prompt="Help me plan my day.">◷ Plan my day</button>
+          </div>
+        </div>
+
+        <div class="composer">
+          <textarea id="homeInput" rows="1" placeholder="Message NEXORA AI..."></textarea>
+          <button class="mic-button" data-mic aria-label="Voice input">🎙</button>
+          <button class="send-button" data-send="homeInput" aria-label="Send message">➤</button>
+        </div>
+        <p class="disclaimer">AI can make mistakes. Verify important information.</p>
+      </section>
+
+      <section class="page" id="chatPage">
+        <div class="section-heading">
+          <span class="eyebrow">INTELLIGENT CONVERSATION</span>
+          <h1>AI <span>Chat</span></h1>
+          <p>Talk with your NEXORA AI assistant.</p>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+          <div class="message assistant-message">
+            <div class="message-avatar">N</div>
+            <div class="message-content">
+              <strong>NEXORA AI</strong>
+              <p>Hello! I'm NEXORA. What would you like to know today?</p>
+            </div>
+          </div>
+        </div>
+        <div class="composer chat-composer">
+          <textarea id="chatInput" rows="1" placeholder="Type your message..."></textarea>
+          <button class="mic-button" data-mic aria-label="Voice input">🎙</button>
+          <button class="send-button" data-send="chatInput" aria-label="Send message">➤</button>
+        </div>
+        <p class="disclaimer">Powered by Gemini through Firebase AI Logic.</p>
+      </section>
+
+      <section class="page" id="voicePage">
+        <div class="section-heading">
+          <span class="eyebrow">HANDS-FREE EXPERIENCE</span>
+          <h1>Voice <span>Assistant</span></h1>
+          <p>Speak naturally with your assistant.</p>
+        </div>
+        <div class="voice-panel">
+          <div class="voice-orb">
+            <div class="orb-core"></div>
+            <div class="orb-ring ring-one"></div>
+            <div class="orb-ring ring-two"></div>
+          </div>
+          <h2 id="voiceStatus">Ready to listen</h2>
+          <p id="voiceText">Tap the microphone and speak.</p>
+          <button class="voice-button" id="voiceBtn">🎙 Start speaking</button>
+        </div>
+      </section>
+
+      <section class="page" id="appsPage">
+        <div class="section-heading">
+          <span class="eyebrow">DEVICE SHORTCUTS</span>
+          <h1>App <span>Actions</span></h1>
+          <p>Choose an app to try opening it on your device.</p>
+        </div>
+        <div class="app-grid">
+          <button class="app-card" data-app="instagram"><span>◎</span><strong>Instagram</strong><small>Social media</small></button>
+          <button class="app-card" data-app="youtube"><span>▶</span><strong>YouTube</strong><small>Video platform</small></button>
+          <button class="app-card" data-app="snapchat"><span>👻</span><strong>Snapchat</strong><small>Social media</small></button>
+          <button class="app-card" data-app="chrome"><span>◉</span><strong>Chrome</strong><small>Web browser</small></button>
+          <button class="app-card" data-app="google"><span>G</span><strong>Google</strong><small>Search</small></button>
+        </div>
+        <p class="disclaimer">App launching depends on your browser, Android version and installed apps.</p>
+      </section>
+
+      <section class="page" id="historyPage">
+        <div class="section-heading">
+          <span class="eyebrow">YOUR RECENT ACTIVITY</span>
+          <h1>Chat <span>History</span></h1>
+          <p>Your conversations saved on this device.</p>
+        </div>
+        <div id="historyList" class="history-list">
+          <p class="empty-state">Your conversations will appear here.</p>
+        </div>
+        <button class="secondary-button" id="clearHistoryBtn">Clear history</button>
+      </section>
+
+      <section class="page" id="settingsPage">
+        <div class="section-heading">
+          <span class="eyebrow">MAKE IT YOURS</span>
+          <h1>App <span>Settings</span></h1>
+          <p>Personalize your assistant experience.</p>
+        </div>
+        <div class="settings-list">
+          <label class="setting-row">
+            <span><strong>Spoken responses</strong><small>Read assistant answers aloud</small></span>
+            <input type="checkbox" id="speechToggle" checked>
+          </label>
+          <label class="setting-row">
+            <span><strong>Sound effects</strong><small>Interface sound preference</small></span>
+            <input type="checkbox" id="soundToggle">
+          </label>
+          <label class="setting-row">
+            <span><strong>Language</strong><small>Choose your conversation language</small></span>
+            <select id="languageSelect">
+              <option value="en-IN">English</option>
+              <option value="te-IN">Telugu</option>
+              <option value="hi-IN">Hindi</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>© 2026 NEXORA AI</span>
+        <span>Created by Akhil Netha</span>
+      </footer>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
